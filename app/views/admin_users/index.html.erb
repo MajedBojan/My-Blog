@@ -1,0 +1,20 @@
+<% @users.each do |user|%>
+
+<div class="post_wrapper">
+<%= image_tag user.image.url(:thumb) %><br>
+<h2 class="title"><%= link_to user.username, user %></h2> <br><!--this link for post 
+if you want a spicific post press pots title -->
+
+<!-- < image_tag post.image.url(:medium) %> -->
+
+<p class="date"><%= user.created_at.strftime("%B, %d, %Y ") %></p>
+
+
+
+</div>
+
+<% end %>
+
+<p>
+<%=link_to "Add new user", new_admin_user_path,  class: 'button' %>
+</p>

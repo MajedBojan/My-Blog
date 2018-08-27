@@ -1,0 +1,27 @@
+<div id="page_wrapper">
+<div id="profile_image">
+<%= image_tag @page.image.url(:medium) %>
+</div>
+<br>
+<div id="content">
+<h2 class="title"><%= @page.title%></h2>
+<%= @page.body%><br><br><br>
+Updated <%= time_ago_in_words(@page.updated_at) %> Ago<br><br>
+
+<% unless session[:username].blank?%>
+<%= link_to 'Edit', edit_page_path(@page), class: 'button' %>
+<%end%>
+
+<!-- <h1>Hey, I'm Majed Bojan</h1>
+ -->
+
+<!-- <p>Welcom to my web App blog</p> -->
+
+<!-- <p> This weak i intreasted with Rails 5 really Rails is very intreast</p>
+<p> If you'd like to follow along as I learn more ruby On rails, find me on Twitter at <a href="http://twitter.com/majedbojan">@majedbojan</a>
+or on the Facebook at <a href="http://facebook.com/majedbojan">majedbojan</a>
+</p -->
+</div>
+
+<div>
+

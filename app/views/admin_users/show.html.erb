@@ -1,0 +1,22 @@
+<div id="page_wrapper">
+<div id="profile_image">
+<!-- <= image_tag @page.image.url(:medium) %> -->
+</div>
+<br>
+<div id="content">
+<%= image_tag @user.image.url(:medium) %>
+
+<h2 class="title"><%= @user.username%></h2>
+<%= @user.email %><br>
+<%= @user.password_digest %><br><br>
+<%= @user.privilege %><br><br>
+Updated <%= time_ago_in_words(@user.updated_at) %> Ago<br><br>
+
+
+<%= link_to 'Edit', edit_admin_user_path(@user), class: 'button' %>
+<%= link_to 'Delete', admin_user_path(@user), class: 'button', method: :delete, data: {confirm: "Are you sure to delete user?"} %>
+
+</div>
+
+<div>
+
