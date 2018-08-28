@@ -7,7 +7,6 @@ class AdminUsersController < ApplicationController
   end
 
   def login
-
   	#login_form
   end
 
@@ -41,13 +40,13 @@ def update
 if @user.update(set_parametrs)
 redirect_to @user
 else
-render 'edit'  
+render 'edit'
 end
 end
 
- 
+
   def delete
-  @user = AdminUser.find(params[:id])    
+  @user = AdminUser.find(params[:id])
   end
 
   def destroy
@@ -56,7 +55,7 @@ end
   @user.destroy
   redirect_to admin_users_path
   end
-  
+
 
 
   def attempt_login
@@ -65,15 +64,15 @@ end
 		found_user = AdminUser.where(:username => params[:username]).first
 		if found_user
 			authorized_user = found_user.authenticate(params[:password])
-		
+
 		end
   	end
-  
+
   	if authorized_user
 		session[:id] = authorized_user.id
 		session[:username] = authorized_user.username
     session[:privilege] = authorized_user.privilege
-    
+
   		flash[:notice] = "Welcom #{ params[:username]}"
   		redirect_to root_path
   	else
@@ -97,7 +96,7 @@ end
     if time.is_a?(String)
       time = time.split.inject { |count, unit| count.to_i.send(unit) }
     end
- 
+
   delete_all "updated_at < '#{time.ago.to_s(:db)}' OR
   created_at < '#{2.days.ago.to_s(:db)}'"
   end

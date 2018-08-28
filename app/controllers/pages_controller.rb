@@ -3,9 +3,8 @@ class PagesController < ApplicationController
 	def index
 	end
 
-
 	def new
-	@page = Page.new
+	  @page = Page.new
 	end
 
 	def create
@@ -15,7 +14,6 @@ class PagesController < ApplicationController
 		else
 		 redirect_to root_path
 		end
-
 end
 
 def show

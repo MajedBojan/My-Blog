@@ -15,8 +15,8 @@
 <body>
 <div id="sidebar">
 <div id="logo">
-<%= image_tag @profile.image.url(:thumb)%>
-<!-- <img src="majed.jpg" class="img-circle img-responsive" alt="Cinque Terre" width="304" height="236"> -->
+<!-- <= image_tag @profile.image.url(:thumb)%> -->
+<img src="majed.jpg" class="img-circle img-responsive" alt="Cinque Terre" width="304" height="236">
 </div>
 <ul>
 <li class="category"> Website</li>
@@ -49,7 +49,7 @@
 <% elsif current_page?(about_path)%>
 <p>About</p>
 <% elsif current_page?(@user)%>
-<P><%= link_to "Back to accounts", admin_users_path %></P>	
+<P><%= link_to "Back to accounts", admin_users_path %></P>
 <%else%>
 <%= link_to "Back to all blogs", root_path%>
 <%end%>
@@ -57,13 +57,13 @@
 <% if !session[:username].blank?%>
 <%=link_to "new post", new_post_path,  class: 'button' %>
 <%end%>
-<%= link_to 'Admin',{:controller =>'admin_users' ,:action => 'login'},  class: 'button' %> 
+<%= link_to 'Admin',{:controller =>'admin_users' ,:action => 'login'},  class: 'button' %>
 <% if !session[:username].blank? %>
-<%= link_to "profile Img", profileimage_path(@profile),  class: 'button' %> 
+<%= link_to "profile Img", profileimage_path(@profile),  class: 'button' %>
 
 <%=link_to "Manage Accounts",  admin_users_path,class: 'button' if session[:privilege]  %>
 
-<%= link_to 'Logout',{:controller =>'admin_users' ,:action => 'logout'},  class: 'button' %> 
+<%= link_to 'Logout',{:controller =>'admin_users' ,:action => 'logout'},  class: 'button' %>
 <%end%>
 
 
