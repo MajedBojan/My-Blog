@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-   before_action :get_profile_image
+  #  before_action :get_profile_image
 
 private
 
@@ -14,11 +14,6 @@ private
 		return true
 
 		end
-	
-end
-def get_profile_image
-		@profile = Profileimage.first
-	end
-	
 
+end
 end
