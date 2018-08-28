@@ -8,7 +8,7 @@ private
 
 		unless session[:id]
 				flash[:notice] = "Sorry you don't have enough access privileges"
-				redirect_to(:controller => 'admin_users', :action => 'login')
+				redirect_to(:controller => 'users', :action => 'login')
 		return false #halts the before_action
 		else
 		return true

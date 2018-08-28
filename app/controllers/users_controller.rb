@@ -53,7 +53,7 @@ end
 
  @user = User.find(params[:id])
  @user.destroy
- redirect_to admin_users_path
+ redirect_to users_path
  end
 
 
