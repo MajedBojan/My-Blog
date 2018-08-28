@@ -9,12 +9,11 @@ class ProfileimagesController < ApplicationController
   def new
     @profile = Profileimage.new
   end
-def create
 
+  def create
   @profile = Profileimage.new(set_image)
   if @profile.save
     redirect_to @profile
-
   else
     render 'new'
 end

@@ -38,7 +38,7 @@ end
 def update
   @user = AdminUser.find(params[:id])
 if @user.update(set_parametrs)
-redirect_to @user
+  redirect_to @user
 else
 render 'edit'
 end

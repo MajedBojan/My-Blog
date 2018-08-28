@@ -8,9 +8,4 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.timestamps
     end
   end
-  def down
-
-  	# drop_table :comments
-  	
-  end
  end
