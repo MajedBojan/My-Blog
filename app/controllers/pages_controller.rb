@@ -37,6 +37,7 @@ end
 end
 
 private
+
 def set_parametrs
 
 params.require(:page).permit(:title, :body, :image)

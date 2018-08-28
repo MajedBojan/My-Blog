@@ -7,8 +7,8 @@ respond_to :json
 #before_action  except: [:index, :show]
 # before_action :confirm_logged_in, except: [:index, :show]
 
-def index	
-respond_with Post.all
+def index
+  respond_with Post.all
 end
 
 def show

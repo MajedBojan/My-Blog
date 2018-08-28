@@ -8,4 +8,16 @@ class AdminUser < ApplicationRecord
 #  validates_confirmation_of :password
   has_attached_file :image, styles: { medium: "220x180>", thumb: "150x120>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+
+  ## -------------------- Requirements -------------------- ##
+  ## ----------------------- Scopes ----------------------- ##
+  ## --------------------- Constants ---------------------- ##
+  ## ----------------------- Enums ------------------------ ##
+  ## -------------------- Associations -------------------- ##
+  ## -------------------- Validations --------------------- ##
+  ## --------------------- Callbacks ---------------------- ##
+  ## ------------------- Class Methods -------------------- ##
+  ## ---------------------- Methods ----------------------- ##
+
 end
