@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-namespace :api, defoult: {:format => :json}do
-namespace :v1 do
-
-	resources :posts
-
+  namespace :api, defoult: {:format => :json}do
+  namespace :v1 do
+  	resources :posts
+  end
 end
-end
-	get 'admin_users/index'
-	get 'admin_users/login'
-	get 'admin_users/logout'
+	get 'users/index'
+	get 'users/login'
+	get 'users/logout'
 
-	post 'admin_users/attempt_login'
+	post 'users/attempt_login'
 	get 'pages/show'
 
 	get 'login', :to => "admin_users#attempt_login"

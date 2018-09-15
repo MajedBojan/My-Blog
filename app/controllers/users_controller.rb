@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :privileges , except: [:login, :attempt_login, :logout]
 
  def index
- @users = User.all.order("created_at ASC")
+   @users = User.all.order("created_at ASC")
  end
 
  def login
@@ -71,7 +71,7 @@ end
    if authorized_user
    session[:id] = authorized_user.id
    session[:username] = authorized_user.username
-   session[:privilege] = authorized_user.privilege
+  #  session[:privilege] = authorized_user.privilege
 
      flash[:notice] = "Welcom #{ params[:username]}"
      redirect_to root_path

@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 #layout false
 #before_action  except: [:index, :show]
-before_action :confirm_logged_in, except: [:index, :show]
+# before_action :confirm_logged_in, except: [:index, :show]
 
-def index	
+def index
 	@posts = Post.all.order('created_at DESC')
 
 #  respond_to  do |format|
@@ -13,7 +13,7 @@ def index
 end
 
 
-def new	
+def new
 	@post = Post.new
 end
 
@@ -51,7 +51,7 @@ def destroy
 
 @post = Post.find(params[:id])
 @post.destroy
-#redirect_to posts_path	
+#redirect_to posts_path
 redirect_to root_path
 end
 private
