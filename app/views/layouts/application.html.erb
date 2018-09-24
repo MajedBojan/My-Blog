@@ -45,21 +45,21 @@
     <% elsif current_page?(about_path)%>
     <p>About</p>
     <% elsif current_page?(@user)%>
-    <P><%= link_to "Back to accounts", users_login_path %></P>
+    <P><%= link_to "Back to accounts", sessions_login_path %></P>
     <%else%>
     <%= link_to "Back to all blogs", root_path%>
     <%end%>
     <div class="buttons">
-    <% if !session[:username].blank?%>
+    <% if !session[:email].blank?%>
     <%=link_to "new post", new_post_path,  class: 'button' %>
     <%end%>
-    <%= link_to 'Admin',{:controller =>'users' ,:action => 'login'},  class: 'button' %>
-    <% if !session[:username].blank? %>
-    <%= link_to "profile Img", profileimage_path(@profile),  class: 'button' %>
+    <%= link_to 'Admin',{:controller =>'sessions' ,:action => 'login'},  class: 'button' %>
+    <% if !session[:email].blank? %>
+    <!-- < link_to "profile Img", profileimage_path(@profile),  class: 'button' %> -->
 
     <%=link_to "Manage Accounts",  users_path,class: 'button' if session[:privilege]  %>
 
-    <%= link_to 'Logout',{:controller =>'users' ,:action => 'logout'},  class: 'button' %>
+    <%= link_to 'Logout',{:controller =>'sessions' ,:action => 'logout'},  class: 'button' %>
     <%end%>
     </div>
   </div>

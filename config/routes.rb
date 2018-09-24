@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
 end
 	get 'users/index'
-	get 'users/login'
-	get 'users/logout'
+	get 'sessions/login'
+	get 'sessions/logout'
 
-	post 'users/attempt_login'
+	post 'sessions/attempt_login'
 	get 'pages/show'
 
 	get 'login', :to => "admin_users#attempt_login"

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < BaseController
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
   before_action :privileges , except: [:login, :attempt_login, :logout]
 
@@ -20,16 +20,15 @@ end
  end
 
  def create
-   @user = User.new(set_parametrs)
-   if @user.save
-   flash[:notice] = "The was created Succesefully"
-   redirect_to @user
-else
-
- flash[:notice] = "There's somthing wrong"
- render 'new'
- end
-end
+    @user = User.new(set_parametrs)
+    if @user.save
+      flash[:notice] = "The was created Succesefully"
+      redirect_to @user
+    else
+      flash[:notice] = "There's somthing wrong"
+      render 'new'
+    end
+  end
 
 def edit
  @user = User.find(params[:id])
@@ -59,9 +58,9 @@ end
 
 
  def attempt_login
-   if params[:username].present? && params[:password].present?
+   if params[:email].present? && params[:password].present?
 
-   found_user = User.where(:username => params[:username]).first
+   found_user = User.where(:email => params[:email]).first
    if found_user
      authorized_user = found_user.authenticate(params[:password])
 
@@ -70,15 +69,15 @@ end
 
    if authorized_user
    session[:id] = authorized_user.id
-   session[:username] = authorized_user.username
+   session[:email] = authorized_user.email
   #  session[:privilege] = authorized_user.privilege
 
-     flash[:notice] = "Welcom #{ params[:username]}"
+     flash[:notice] = "Welcom #{ params[:email]}"
      redirect_to root_path
    else
 
      #flash[:notice] = "Sorry you don't have enough access privileges"
-     flash[:notice] = "username or password is not correct"
+     flash[:notice] = "email or password is not correct"
 
      redirect_to :action => 'login'
 end
@@ -86,10 +85,10 @@ end
 end
 
  def logout
- session[:id] = nil
- session[:username] = nil
- flash[:notice] = " Good by #{ params[:username]}"
- redirect_to root_path
+   session[:id] = nil
+   session[:email] = nil
+   flash[:notice] = " Good by #{ params[:email]}"
+   redirect_to root_path
  end
 
  def self.sweep(time = 2.minutes)
@@ -104,7 +103,7 @@ end
 private
 
 def set_parametrs
- params.require(:admin_user).permit(:username, :email, :password, :image, :privilege )
+ params.require(:admin_user).permit(:email, :password, :image, :privilege )
 end
 
 def privileges

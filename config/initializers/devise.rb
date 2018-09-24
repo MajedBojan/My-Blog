@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -6,7 +8,11 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '84f4cf113cb21c73a127e131a24a96b63ee9f94c45a1e954c247a608daf449b3bad2655883693b68c5fccad14d656cd3ace0f7a17888606b53a7cf20237423a6'
+  # config.secret_key = '7f8a48b428cbc29a1d702439e2cfdcfb84f0c8186c3a07a483581ddbb5c1fdc4b66390fcb0a2f296229914f2d134908d9ea25ddd96a48b603316dce42d9bf8ce'
+  
+  # ==> Controller configuration
+  # Configure the parent class to the devise controllers.
+  # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,9 +114,12 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '9470304d7276f0155badf57b2012e09f30a72e5e820098636639d9d0e365abe44166ae7fea005f87e0c297d1d48b4250cbab68dd410dc071acd9747fe46866dd'
+  # config.pepper = 'd1eb194ec13ed562c59164f475e359e471968bc44d9e95e7fa51ae2cc744cbd9f3956605cf701500bb1cae17d2b683d93e8bf25ef4b278bf28b913efd0a4dd58'
 
-  # Send a notification email when the user's password is changed
+  # Send a notification to the original email when the user's email is changed.
+  # config.send_email_changed_notification = false
+
+  # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
@@ -271,4 +280,11 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # ==> Turbolinks configuration
+  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
+  #
+  # ActiveSupport.on_load(:devise_failure_app) do
+  #   include Turbolinks::Controller
+  # end
 end

@@ -1,15 +1,10 @@
-class PostsController < ApplicationController
+class PostsController < BaseController
 #layout false
 #before_action  except: [:index, :show]
 # before_action :confirm_logged_in, except: [:index, :show]
 
 def index
-	@posts = Post.all.order('created_at DESC')
-
-#  respond_to  do |format|
-#  format.json {render json: @posts}
-#  format.html
-# end
+  @posts = Post.all.order('created_at DESC')
 end
 
 

@@ -5,10 +5,10 @@
 </div>
 <%end%>
 <div class="">
-<%= form_tag(:controller => 'users',:action => 'attempt_login') do %>
+<%= form_tag(:controller => 'sessions',:action => 'attempt_login') do %>
 <p>
-<%=	label_tag(:username) %><br>
-<%= text_field_tag(:username) %>
+<%=	label_tag(:email) %><br>
+<%= text_field_tag(:email) %>
 </p>
 
 
