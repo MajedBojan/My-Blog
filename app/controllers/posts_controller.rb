@@ -9,7 +9,6 @@ class PostsController < BaseController
     @post = Post.new
   end
 
-
   def create
     @post = Post.new(post_params)
     if @post.save
