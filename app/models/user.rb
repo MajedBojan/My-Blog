@@ -1,18 +1,22 @@
 # == Schema Information
 #
-# Table name: admin_users
+# Table name: users
 #
-#  id                 :integer          not null, primary key
-#  email              :string
-#  image_content_type :string
-#  image_file_name    :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
-#  password_digest    :string
-#  privilege          :boolean
-#  username           :string
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id              :integer          not null, primary key
+#  email           :string
+#  name            :string
+#  password_digest :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  post_id         :integer
+#
+# Indexes
+#
+#  index_users_on_post_id  (post_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (post_id => posts.id)
 #
 
 class User < ApplicationRecord
@@ -23,8 +27,8 @@ class User < ApplicationRecord
 	validates :email, confirmation: { case_sensitive: false }
 
 #  validates_confirmation_of :password
-  has_attached_file :image, styles: { medium: "220x180>", thumb: "150x120>" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  # has_attached_file :image, styles: { medium: "220x180>", thumb: "150x120>" }
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 
   ## -------------------- Requirements -------------------- ##

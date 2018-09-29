@@ -45,7 +45,7 @@ a {
 	#logo{
 -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
-          border-radius: 6p;
+          border-radius: 6px;
 		width: 50px;
 		position: absolute;
 		right: 6em;
@@ -86,7 +86,7 @@ a {
  		color: #9eafba;
  	}
  }
- 
+
  .button {
  	outline: none;
  	background: transparent;
@@ -101,7 +101,7 @@ a {
  		}
  	}
  }
- 
+
  .clearfix:after {
     content: ".";
     visibility: hidden;
@@ -109,12 +109,13 @@ a {
     height: 0;
     clear: both;
  }
- 
+
  #main_content {
  	margin-top: -33px;
- 	margin-left: 218px;
+ 	margin-left: -31px;
  	margin-right: -32px;
- 	#header {
+
+  #header {
  		padding: 1em 3em;
  		border-bottom: 1px solid #d6dce0;
  		background: #f5f7f9;
@@ -126,14 +127,28 @@ a {
  			color: #9eafba;
  			text-decoration: none;
  		}
- 		.buttons {
-
- 			float: right;
- 			margin-top: -6px;
- 			.button {
- 				font-size: .8em;
- 				margin-left: .5em;
- 			}
+ 	// 	.buttons {
+ 	// 	// 	float: right;
+ 	// 	// 	margin-top: -6px;
+ 	// 		.button {
+ 	// 			font-size: .8em;
+ 	// 			margin-left: 5em;
+ 	// 		}
+		.button {
+			font-size: 1em;
+			margin-left: 1em;
+      outline: none;
+      background: transparent;
+      border: 1px solid #d6dce0;
+      padding: .5em 1.5em;
+      border-radius: 1.5em;
+      &:hover {
+        border: 1px solid #33acb7;
+        color: #33acb7;
+        a {
+          color: #33acb7 !important;
+        }
+      }
  		}
  	}
  	.post_wrapper {
@@ -157,7 +172,7 @@ a {
  		}
  	}
  	#post_content {
- 		padding: 1em 3em;
+ 		padding: 8em 3em;
  		.title {
  			font-weight: 500;
  			text-decoration: none;
@@ -260,7 +275,7 @@ a {
  	textarea {
  		min-height: 180px;
  	}
- 
+
  	input[type="submit"] {
  		outline: none;
  		background: transparent;
