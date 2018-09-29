@@ -4,6 +4,9 @@ class PostsController < BaseController
     @posts = Post.all.order('created_at DESC')
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new
     @post = Post.new
@@ -16,10 +19,6 @@ class PostsController < BaseController
     else
       render 'new'
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
   end
 
   def edit
@@ -36,7 +35,6 @@ class PostsController < BaseController
   end
 
   def destroy
-
     @post = Post.find(params[:id])
     @post.destroy
     #redirect_to posts_path
