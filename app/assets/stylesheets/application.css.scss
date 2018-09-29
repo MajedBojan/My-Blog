@@ -112,7 +112,7 @@ a {
 
  #main_content {
  	margin-top: -33px;
- 	margin-left: 218px;
+ 	margin-left: -31px;
  	margin-right: -32px;
 
   #header {
@@ -123,18 +123,32 @@ a {
  		p {
  			display: inline;
  		}
-
  		a {
  			color: #9eafba;
  			text-decoration: none;
  		}
- 		.buttons {
- 			float: right;
- 			margin-top: -6px;
- 			.button {
- 				font-size: .8em;
- 				margin-left: .5em;
- 			}
+ 	// 	.buttons {
+ 	// 	// 	float: right;
+ 	// 	// 	margin-top: -6px;
+ 	// 		.button {
+ 	// 			font-size: .8em;
+ 	// 			margin-left: 5em;
+ 	// 		}
+		.button {
+			font-size: 1em;
+			margin-left: 1em;
+      outline: none;
+      background: transparent;
+      border: 1px solid #d6dce0;
+      padding: .5em 1.5em;
+      border-radius: 1.5em;
+      &:hover {
+        border: 1px solid #33acb7;
+        color: #33acb7;
+        a {
+          color: #33acb7 !important;
+        }
+      }
  		}
  	}
  	.post_wrapper {
