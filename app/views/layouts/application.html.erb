@@ -11,65 +11,23 @@
   </head>
 
 <body>
-  <div id="sidebar">
-    <div id="logo">
-    <!-- <= image_tag @profile.image.url(:thumb)%> -->
-      <img src="majed.jpg" class="img-circle img-responsive" alt="Cinque Terre" width="304" height="236">
-    </div>
-    <ul>
-      <li class="category"> Website</li>
-      <li><%= link_to "Blogs", root_path %></li>
-      <li><%= link_to "About", page_path(params[:id] = 1) %></li>
-      <!--  <li><= link_to "About", {:controller =>'pages',:action => 'show',:id => @page.id}%></li> -->
-    </ul>
-
-    <ul>
-      <li class="category">Social</li>
-      <li><a href="https://facebook.com/majedbojan">Facebook</a></li>
-      <li><a href="https://twitter.com/majedbojan">Twitter</a></li>
-      <li><a href="https://github.com/majedbojan">Github</a></li>
-      <!-- <li><a href="https://bojanmajed@gmail.com">Gmail</a></li> -->
-    </ul>
-
-    <ul>
-      <li>
-        <p class="sign_in">Admin Login</p>
-      </li>
-    </ul>
-  </div>
-
   <div id="main_content">
-  <div id="header">
-    <% if current_page?(root_path)%>
-    <p>All posts</p>
-    <% elsif current_page?(about_path)%>
-    <p>About</p>
-    <% elsif current_page?(@user)%>
-    <P><%= link_to "Back to accounts", sessions_login_path %></P>
-    <%else%>
-    <%= link_to "Back to all blogs", root_path%>
-    <%end%>
-    <div class="buttons">
-    <% if !session[:email].blank?%>
-    <%=link_to "new post", new_post_path,  class: 'button' %>
-    <%end%>
-    <%= link_to 'Admin',{:controller =>'sessions' ,:action => 'login'},  class: 'button' %>
-    <% if !session[:email].blank? %>
-    <!-- < link_to "profile Img", profileimage_path(@profile),  class: 'button' %> -->
 
-    <%=link_to "Manage Accounts",  users_path,class: 'button' if session[:privilege]  %>
+    <div id="header">
 
-    <%= link_to 'Logout',{:controller =>'sessions' ,:action => 'logout'},  class: 'button' %>
-    <%end%>
+      <img src="majed.jpg" class="img-circle img-responsive" alt="Cinque Terre" width="50px" right="6em" top="3em" >
+        <%=link_to "Home",     root_path,  class: 'button' %>
+        <%=link_to "Blogs",    root_path,  class: 'button' %>
+        <%=link_to "Projects", root_path,  class: 'button' %>
+        <%=link_to "About",    pages_path,  class: 'button' %>
+        <%=link_to "Contact",  new_contact_path,  class: 'button' %>
+        <%=link_to "new post", new_post_path,  class: 'button' %>
     </div>
-  </div>
 
   <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
   <% end%>
   <%= yield %>
   </div>
-
-
 </body>
 </html>
