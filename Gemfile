@@ -22,8 +22,8 @@ gem 'bcrypt', '~> 3.1.7'# Use ActiveModel has_secure_password
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'webpacker'
-gem 'react-rails'
-
+# gem 'react-rails'
+gem 'react_on_rails', '11.1.4'
 group :development, :test do
   gem 'annotate'              # annotate model fields
   gem 'pry-rails'             # for better debuggin
@@ -46,3 +46,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+# https://medium.com/@yazed.jamal/rails-with-react-using-react-on-rails-gem-tdd-1e2ed9000c41
+# https://github.com/shakacode/react_on_rails
