@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "react-dom": "^16.6.0",
     "react-on-rails": "11.1.8"
   },
   "devDependencies": {

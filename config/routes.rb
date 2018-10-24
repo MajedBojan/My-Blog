@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'test_react/index'
   get 'hello_world', to: 'hello_world#index'
   get 'contacts/index'
 
@@ -30,4 +31,5 @@ end
 root "posts#index"
 #match ':controller(/:action(/:id))' , :via => [:get,:post]
 get "/about", to: "pages#about"
+
 end
