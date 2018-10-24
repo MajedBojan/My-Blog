@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.5'# Build JSON APIs with ease. Read more: https://github.c
 gem 'bcrypt', '~> 3.1.7'# Use ActiveModel has_secure_password
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
+gem 'webpacker'
+gem 'react-rails'
 
 group :development, :test do
   gem 'annotate'              # annotate model fields
