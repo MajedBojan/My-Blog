@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+https://launchschool.com/blog/how-to-use-devise-in-rails-for-authentication
